@@ -1,8 +1,8 @@
+- if @password.expired
   %p
     %div.title
-      %span.title = image_tag(CUSTOM_LOGO)
-
-- if @password.expired
+      %img.logo{:src => CUSTOM_LOGO}
+      %br
   %p.large-yellow-font
     We apologize but this secret link has expired.
   %p
@@ -16,6 +16,10 @@
     If needed, please contact the person or organization who gave you this secret URL.
 
 - else
+  %p
+    %div.title
+      %img.logo{:src => CUSTOM_LOGO}
+      %br
   - if @first_view
     .share_note
       == This is your password.  Use this secret link to share it:
