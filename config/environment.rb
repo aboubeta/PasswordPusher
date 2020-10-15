@@ -59,10 +59,5 @@ CUSTOM_LOGO = ENV.fetch('CUSTOM_LOGO', '')
 # When set to true, a class light_theme will be added to the body
 LIGHT_THEME = ENV.fetch('LIGHT_THEME', 'true') == 'true'
 
-# BRAND_NAME
-#
-# Add a brand name to the page title
-BRAND_NAME = ENV.fetch('BRAND_NAME', '')
-
 # Initialize the Rails application.
 Rails.application.initialize!
