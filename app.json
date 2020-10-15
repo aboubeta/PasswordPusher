@@ -52,8 +52,12 @@
       "description": "Expire after views maximum value",
       "value": "100"
     },
-    "DELETABLE_BY_VIEWER_PASSWORDS": {
-      "description": "When true, passwords will have a link to optionally delete the password being viewed. When pushing a new password, this option will also add a checkbox to conditionally enable/disable this feature on a per-password basis.",
+    "CUSTOM_LOGO": {
+      "description": "URL to custom logo.",
+      "value": "Enter URL of the logo"
+    },
+    "DARK_THEME": {
+      "description": "When true, the original dark theme will be used. When turned off a light theme will be used",
       "value": "true"
     },
     "DELETABLE_BY_VIEWER_DEFAULT": {

@@ -3,23 +3,69 @@
 
 body {
   text-align: center;
-  background: #000000 image-url('outlets.png') repeat;
   font-family: "Crete Round", Tahoma, Georgia, Verdana, serif;
-  color: #ddd;
   width: 95%;
   font-size: 16px;
   margin-left: auto;
   margin-right: auto;
 }
 
-a:link, a:visited, a:active {
-  color: yellow;
-  text-decoration: none;
+body.dark_theme{
+  background: #000000 image-url('outlets.png') repeat;
+  color: #ddd;
+  
+  
+  a:link, a:visited, a:active {
+    color: yellow;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #00CC00;
+    text-decoration: none;
+  }
+  
+  .normal-yellow-font {
+    color: yellow;
+  }
+  .medium-yellow-font {
+    font-size: 2em;
+    color: yellow;
+  }
+  
+  .large-yellow-font {
+    font-size: 3em;
+    color: yellow;
+  }
 }
 
-a:hover {
-  color: #00CC00;
-  text-decoration: none;
+body.light_theme{
+  background-color:#f3f2f1;
+  color:#000;
+  
+  
+  a:link, a:visited, a:active {
+    color: darkcyan;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: darkblue;
+    text-decoration: none;
+  }
+  
+  .normal-yellow-font {
+    color: darkcyan;
+  }
+  .medium-yellow-font {
+    font-size: 2em;
+    color: darkcyan;
+  }
+  
+  .large-yellow-font {
+    font-size: 3em;
+    color: darkcyan;
+  }
 }
 
 .auth_providers_area {
@@ -38,20 +84,6 @@ a:hover {
   margin-right: 20px;
   text-align: center;
   margin-bottom: 10px;
-}
-
-.normal-yellow-font {
-  color: yellow;
-}
-
-.medium-yellow-font {
-  font-size: 2em;
-  color: yellow;
-}
-
-.large-yellow-font {
-  font-size: 3em;
-  color: yellow;
 }
 
 .footer {
