@@ -49,5 +49,15 @@ DELETABLE_BY_VIEWER_DEFAULT = ENV.fetch('DELETABLE_BY_VIEWER_DEFAULT', 'true') =
 # variable.  e.g. For slack integrations that don't use pwpush.com
 SLACK_CLIENT_ID = ENV.fetch('SLACK_CLIENT_ID', "pwpush: NotSetInEnv")
 
+# CUSTOM_LOGO
+#
+# Enter an URL with a PNG file that can be used as a custom logo
+CUSTOM_LOGO = ENV.fetch('CUSTOM_LOGO', '')
+
+# LIGHT_THEME
+#
+# When set to true, a class ligth_theme will be added to the body
+LIGHT_THEME = ENV.fetch('LIGHT_THEME', 'false') == 'false'
+
 # Initialize the Rails application.
 Rails.application.initialize!

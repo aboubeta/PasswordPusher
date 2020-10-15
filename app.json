@@ -56,9 +56,9 @@
       "description": "URL to custom logo.",
       "value": "Enter URL of the logo"
     },
-    "DARK_THEME": {
-      "description": "When true, the original dark theme will be used. When turned off a light theme will be used",
-      "value": "true"
+    "LIGHT_THEME": {
+      "description": "When true, a light theme will be used",
+      "value": "false"
     },
     "DELETABLE_BY_VIEWER_DEFAULT": {
       "description": "When the option DELETABLE_BY_VIEWER_PASSWORDS is set to true, this option does two things: 1. Sets the default check state for the \"Allow viewers to optionally delete password before expiration\" checkbox. 2. Sets the default value for newly pushed passwords if unspecified (such as with a json request)",
