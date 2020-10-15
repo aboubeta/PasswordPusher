@@ -33,13 +33,7 @@
           }
       }
       ]);
-  - if DARK_THEME
-    %body.dark_theme
-      .content
-        = yield
 
-      = javascript_include_tag "application"
-  - else
     %body.light_theme
       .content
         = yield
