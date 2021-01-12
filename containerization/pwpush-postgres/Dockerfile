@@ -8,11 +8,17 @@ ENV APP_ROOT=/opt/PasswordPusher
 ENV PATH=${APP_ROOT}:${PATH} HOME=${APP_ROOT}
 ENV DATABASE_URL=postgresql://passwordpusher_user:passwordpusher_passwd@postgres:5432/passwordpusher_db
 
-RUN ln -fs /usr/share/zoneinfo/Europe/Paris > /etc/localtime
+RUN ln -fs /usr/share/zoneinfo/Europe/Madrid > /etc/localtime
+
+RUN sed -i -e '1ideb mirror://mirrors.ubuntu.com/mirrors.txt focal main restricted universe multiverse\' /etc/apt/sources.list
+RUN sed -i -e '1ideb mirror://mirrors.ubuntu.com/mirrors.txt focal-updates main restricted universe multiverse\' /etc/apt/sources.list
+RUN sed -i -e '1ideb mirror://mirrors.ubuntu.com/mirrors.txt focal-backports main restricted universe multiverse\' /etc/apt/sources.list
+RUN sed -i -e '1ideb mirror://mirrors.ubuntu.com/mirrors.txt focal-security main restricted universe multiverse\' /etc/apt/sources.list
+
 RUN apt-get update -qq && \
     apt-get install -y --assume-yes build-essential libpq-dev git curl ruby2.7 ruby2.7-dev tzdata sqlite3 ruby-sqlite3 libsqlite3-dev zlib1g-dev nodejs yarnpkg && \
     cd /opt && \
-    git clone https://github.com/pglombardo/PasswordPusher.git && \
+    git clone https://github.com/teimas/PasswordPusher.git && \
     touch ${APP_ROOT}/log/production.log && \
     cd ${APP_ROOT} && \
     chown -R 1001:root ${APP_ROOT}
