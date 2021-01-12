@@ -1,7 +1,7 @@
 - if @password.expired
   %p
     %div.title
-      %img.logo{:src => CUSTOM_LOGO}
+      = image_tag CUSTOM_LOGO, width: '30%'
       %br
   %p.large-yellow-font
     We apologize but this secret link has expired.
@@ -18,7 +18,7 @@
 - else
   %p
     %div.title
-      %img.logo{:src => CUSTOM_LOGO}
+      = image_tag CUSTOM_LOGO, width: '30%'
       %br
   - if @first_view
     .share_note
