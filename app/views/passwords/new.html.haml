@@ -2,7 +2,7 @@
   %p
     %div.title
       = image_tag CUSTOM_LOGO, width: '30%'
-      %br
+    %div
       %span.tagline Envío seguro de contraseñas
   %p.payload
     = f.text_field(:payload, { :class => "password", :value => PAYLOAD_INITIAL_TEXT, :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
