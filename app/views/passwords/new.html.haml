@@ -3,39 +3,39 @@
     %div.title
       = image_tag CUSTOM_LOGO, width: '30%'
       %br
-      %span.tagline Secure Share Password
+      %span.tagline Envío seguro de contraseñas
   %p.payload
     = f.text_field(:payload, { :class => "password", :value => PAYLOAD_INITIAL_TEXT, :onfocus => "prepareTextField(this)", :onblur => "revertTextField(this)", :autocomplete => "off" })
   %p
-    Expire secret link and delete the stored password after:
+    Eliminar el enlace compartido y la contraseña guardada tras:
     %p.slider_box
       = range_field_tag("password_expire_after_days", EXPIRE_AFTER_DAYS_DEFAULT, {:name => "password[expire_after_days]", :class => "slider", :min => EXPIRE_AFTER_DAYS_MIN, :max => EXPIRE_AFTER_DAYS_MAX, :step => "1", :onchange => "showDaysValue(this.value)", :oninput => "showDaysValue(this.value)"})
       %span#daysrange
-        == #{EXPIRE_AFTER_DAYS_DEFAULT} Days
+        == #{EXPIRE_AFTER_DAYS_DEFAULT} Días
     %p.slider_box
       = range_field_tag("password_expire_after_views", EXPIRE_AFTER_VIEWS_DEFAULT, {:name => "password[expire_after_views]", :class => "slider", :min => EXPIRE_AFTER_VIEWS_MIN, :max => EXPIRE_AFTER_VIEWS_MAX, :step => "1", :onchange => "showViewsValue(this.value)", :oninput => "showViewsValue(this.value)"})
       %span#viewsrange
-        == #{EXPIRE_AFTER_VIEWS_DEFAULT} Views
+        == #{EXPIRE_AFTER_VIEWS_DEFAULT} Visualizaciones
     %br
       %span.note
-        (whichever comes first)
+        (lo que antes ocurra)
     - if DELETABLE_BY_VIEWER_PASSWORDS
       %p.notes
         = check_box_tag "password[deletable_by_viewer]", nil, DELETABLE_BY_VIEWER_DEFAULT
-        Allow viewers to optionally delete password before expiration
+        Permitir que los destinatarios puedan eliminar la contraseña antes de que esta expire
 
   %p= f.submit(:value => "Push it!", :class => "pushit", 'data-disable-with' => "Pushing...")
 
 
 %p.notes
   %span.tip
-    * Tip: Only enter the password into the box.  Other identifying information can compromise security.
+    * Consejo: introducir únicamente la contraseña en el recuadro; cualquier otro tipo de información de identificación puede poner en riesgo la seguridad.
   %p
   %span.note
-    All passwords are encrypted prior to storage and are available to only those with the secret link.
+    Todas las contraseñas se encriptan y solo son accesibles para quienes tengan el enlace.
   %br/
   %span.note
-    Once expired, encrypted passwords are unequivocally deleted from the database.
+    Tras expirar, las contraseñas encriptadas se eliminan por completo de la base de datos.
 
 %p.notes
   = link_to "Teimas", 'https://teimas.com'

@@ -9,7 +9,7 @@
   var defaults = {
     max: 4,
     partial: 2,
-    hintText: 'Click to reveal completely'
+    hintText: 'Haz clic para revelar completamente'
   }
 
   var alertShown = false

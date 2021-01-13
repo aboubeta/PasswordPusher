@@ -4,16 +4,16 @@
       = image_tag CUSTOM_LOGO, width: '30%'
       %br
   %p.large-yellow-font
-    We apologize but this secret link has expired.
+    Lo sentimos, pero este enlace ha expirado.
   %p
     - if @password.deleted
-      This secret link was manually expired by one of its viewers and the password has been deleted from the database.
+      El enlace lo eliminó manualmente una de las personas que lo consultó y la contraseña se ha eliminado de la base de datos.
     - elsif @password.views_remaining == 0
-      == This secret link has hit its maximum view count (#{@password.expire_after_views}) and the password has been deleted from the database.
+      == Este enlace ha llegado al número máximo de visualizaciones (#{@password.expire_after_views}) y la contraseña ha sido eliminada de la base de datos.
     - elsif @password.days_remaining == 0
-      == This secret link has hit its maximum age (#{@password.expire_after_days} days) and the password has been deleted from the database.
+      == Este enlace ha superado su fecha de caducidad (#{@password.expire_after_days} días) y la contraseña ha sido eliminada de la base de datos.
   %p
-    If needed, please contact the person or organization who gave you this secret URL.
+    Si lo necesita, póngase en contacto con quién le envío este enlace.
 
 - else
   %p
@@ -22,33 +22,33 @@
       %br
   - if @first_view
     .share_note
-      == This is your password.  Use this secret link to share it:
+      == Usa el siguiente enlace para compartir la contraseña:
       %div.input_group
         %input#secret_url{ :value => "#{request.url}", :spellcheck => "false", :readonly => true }
         %button.copy-secret-url{ "data-clipboard-target" => "#secret_url" }
           = image_tag('button_up.png')
       %span.note
-        This note won't be shown again...
+        Esta nota no se volverá a mostrar...
         %br/
-        Don't believe me?  Go ahead.  Hit reload...
+        ¿No me crees? Venga, recarga la página...
   %p.normal-yellow-font
-    Your password is...
+    La contraseña es...
 
   %div.payload.spoiler.notranslate#pass{ "translate" => "no" }<
     = @payload
 
   %button#clipboard-button.copy-to-clipboard{ "data-clipboard-target" => "#pass" }
-    Copy to Clipboard
+    Copiar al portapapeles
 
   %p.pwinstructions
-    Please obtain and securely store this password elsewhere, ideally in a password manager.
+    Recupere y guarde esta contraseña en un lugar seguro, preferiblemente en un gestor de contraseñas.
 
   %p
     - if @password.views_remaining == 0
-      == This secret link will be deleted in #{pluralize(@password.days_remaining, 'day')} or #{@password.views_remaining} more views (this is the last view).
+      == Este enlace se desactivará en #{pluralize(@password.days_remaining, 'día')} or #{@password.views_remaining} visualizaciones más (esta es la última visualización)
     - else
-      == This secret link will be deleted in #{pluralize(@password.days_remaining, 'day')}
-      == or #{pluralize(@password.views_remaining, 'more view')} (whichever occurs first).
+      == Este enlace secreto se eliminará en #{pluralize(@password.days_remaining, 'día')}
+      == o #{pluralize(@password.views_remaining, 'visualizaciones más')} (lo que primero ocurra).
   - if @password.deletable_by_viewer
     %p{ :style => 'font-size: .85em;' }
-      = link_to "Nah. I've got it. Delete this secret link now.", password_path, :id => @password.url_token, :method => :delete, :data => { :confirm => 'This will expire this secret link and remove the password from the database forever.  Are you sure?' }
+  = link_to "Nah... Ya la he guardado. Elimina este enlace secreto ahora.", password_path, :id => @password.url_token, :method => :delete, :data => { :confirm => 'Esto eliminará el enlace secreto y la contraseña de la base de datos para siempre. ¿Estás seguro?' }

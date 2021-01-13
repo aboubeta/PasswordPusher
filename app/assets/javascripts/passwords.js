@@ -13,7 +13,7 @@ function saveExpirations()
   $.cookie('pwpush_dbv', dbv.checked.toString(), { expires: 365 });
 
   e = document.getElementById("cookie-save")
-  e.innerHTML = "Saved!"
+  e.innerHTML = "Guardado!"
   return true;
 }
 
@@ -23,9 +23,9 @@ $(document).ready(function() {
   var pw_clipboard = new ClipboardJS('.copy-to-clipboard');
   pw_clipboard.on('success', function(e) {
     var clipboardButton = document.getElementById("clipboard-button");
-    clipboardButton.innerText = "Copied!"
+    clipboardButton.innerText = "Copiado!"
     setTimeout(function() {
-          clipboardButton.innerText = "Copy to Clipboard";
+          clipboardButton.innerText = "Copiar al portatpapeles";
     }, 2000);
     e.clearSelection();
   });
@@ -38,7 +38,7 @@ $(document).ready(function() {
   if (de) {
     if (days) {
       de.value = days
-      dr.innerHTML = days + " Days"
+      dr.innerHTML = days + " Días"
     } else {
       showDaysValue(de.value)
     }
@@ -49,7 +49,7 @@ $(document).ready(function() {
   if (ve) {
     if (views) {
       ve.value = views
-      vr.innerHTML = views + " Views"
+      vr.innerHTML = views + " Visualizaciones"
     } else {
       showViewsValue(ve.value)
     }
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
 $('#password_payload').keypress(function() {
   if ($('#password_payload').val().length > 250) {
-    noty({text: 'Passwords can be up to 250 characters maximum in length.', type: 'warning'});
+    noty({text: 'Las contraseñas tienen un máximo de longitud de 250 caracteres.', type: 'warning'});
     $.noty.clearQueue()
     return false;
   }

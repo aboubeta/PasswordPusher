@@ -12,23 +12,23 @@
 function showDaysValue(newValue)
 {
   if (newValue > 1) {
-  	document.getElementById("daysrange").innerHTML=newValue + ' Days';
+  	document.getElementById("daysrange").innerHTML=newValue + ' Días';
   } else {
-  	document.getElementById("daysrange").innerHTML=newValue + ' Day';
+  	document.getElementById("daysrange").innerHTML=newValue + ' Día';
   }
 }
 
 function showViewsValue(newValue)
 {
   if (newValue > 1) {
-  	document.getElementById("viewsrange").innerHTML=newValue + ' Views';
+  	document.getElementById("viewsrange").innerHTML=newValue + ' Visualizaciones';
   } else {
-  	document.getElementById("viewsrange").innerHTML=newValue + ' View';
+  	document.getElementById("viewsrange").innerHTML=newValue + ' Visualización';
   }
 }
 
 
-msg = "Enter the Password to be Shared"
+msg = "Introduce la contraseña"
 function prepareTextField(e) {
   if (e) {
     if (e.value === msg) {
@@ -49,4 +49,3 @@ function setCopied() {
 }
 
 $('spoiler, .spoiler').spoilerAlert({max: 8, partial: 6})
-
