@@ -45,7 +45,7 @@
 
   %p
     - if @password.views_remaining == 0
-      == Este enlace se desactivará en #{pluralize(@password.days_remaining, 'día')} or #{@password.views_remaining} visualizaciones más (esta es la última visualización)
+      == Este enlace se desactivará en #{pluralize(@password.days_remaining, 'día')} o #{@password.views_remaining} visualizaciones más (esta es la última visualización)
     - else
       == Este enlace secreto se eliminará en #{pluralize(@password.days_remaining, 'día')}
       == o #{pluralize(@password.views_remaining, 'visualizaciones más')} (lo que primero ocurra).
